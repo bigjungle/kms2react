@@ -1,0 +1,11 @@
+version: '2'
+services:
+    kms-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/kms/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=kms
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

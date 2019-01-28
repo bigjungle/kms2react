@@ -1,0 +1,20 @@
+version: '2'
+services:
+    kms-app:
+        image: kms
+        environment:
+            - _JAVA_OPTIONS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://kms-postgresql:5432/kms
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_JEST_URI=http://kms-elasticsearch:9200
+        ports:
+            - 8080:8080
+    kms-postgresql:
+        extends:
+            file: postgresql.yml
+            service: kms-postgresql
+    kms-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: kms-elasticsearch
