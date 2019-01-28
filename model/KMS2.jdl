@@ -1,0 +1,775 @@
+// 10:54 AM 1/28/2019
+// 知识库2.0 20190128
+
+// word dict
+// source 来源
+// state 状态
+// type 类型
+// classification 分类
+// category 类别
+// property 属性
+// attribute 特性
+// Approve 审批
+// verify 审核
+// Review 审查
+// Check 检查
+
+/**
+ * 有效类别 长期和期间
+ * @author JungleYang
+ */
+enum ValidType {
+	LONG, SCOPE
+}
+
+/**
+ * 查看权限类别 查看权限名称 创建人,本单位,本单位和下级单位,全部,自定
+ * @author JungleYang
+ */
+enum ViewPermission {
+	PRIVATEVIEW, DEFAULTVIEW, PROTECTVIEW, PUBLICVIEW, CUSTOMVIEW
+}
+
+/**
+ * 属性值类别 字符,时间,布尔,BLOB
+ * @author JungleYang
+ */
+enum ParaOtherValueType {
+	STRING, INSTANT, BOOLEAN, JSON, BLOB
+}
+
+
+/**
+ * kmsInfo 知识库信息表
+ * @author JungleYang.
+ */
+entity KmsInfo{
+	/** 名称 */
+	name      String   maxlength(4000),
+    /** 编号 */
+    serialNumber String  maxlength(256),
+	/** 序号 */
+	sortString	String   maxlength(10),
+	/** 描述 */
+	descString  String   maxlength(4000),
+	/** 答案 */
+	answer  String   maxlength(4000),
+	/** 是否使用 */
+	usingFlag       Boolean,
+    /** 版本号 */
+    versionNumber  String   maxlength(256),
+	/** 备注 */
+	remarks      String   maxlength(4000),
+	/** 附件路径 */
+	attachmentPath    String   maxlength(4000),
+	/** 附件 */
+	attachmentBlob    Blob,
+	/** 附件名称 */
+	attachmentName    String   maxlength(4000),
+	/** 文本附件 */
+	textBlob    TextBlob,
+	/** 图片附件 */
+	imageBlob    ImageBlob,
+	/** 附件名称 */
+	imageBlobName    String   maxlength(4000),
+	/** 有效类型 */
+	validType ValidType,
+	/** 生效开始时间 */
+	validBegin       Instant,
+	/** 有效截止时间 */
+	validEnd         Instant,
+	/** 创建时间 */
+	createTime       Instant,
+	/** 最后修改时间 */
+	modifyTime       Instant,
+    /** 审核时间 */
+    verifyTime       Instant,
+    /** 发布时间 */
+    publishedTime       Instant,
+    /** 是否需要审核 */
+    verifyNeed       Boolean,
+    /** 审核完成标识 */
+    markAsVerified Boolean,
+    /** 审核结果 */
+    verifyResult       Boolean,
+	/** 审核意见 */
+    verifyOpinion      String   maxlength(4000),
+    /** 查看次数 */
+    viewCount  Integer,
+    /** 查看权限类别 */
+    viewPermission ViewPermission,
+    /** 查看权限人员Json */
+    viewPermPerson  String   maxlength(4000),
+    /** 来源相关信息 */
+    paraSourceString  String   maxlength(4000)
+}
+
+/**
+ * Verify Record 审核记录表
+ * @author.
+ */
+entity VerifyRec {
+	/** 名称 */
+	name String required maxlength(256),
+	/** 描述 */
+	descString String maxlength(256),
+	/** 审核结果 */
+	verifyResult  Boolean,
+    /** 审核得分 */
+    verifyScore  Integer,
+	/** 备注 */
+	remarks      String   maxlength(1000),
+	/** 创建时间 */
+	createTime  Instant,
+	/** 最后修改时间 */
+	modifyTime  Instant
+}
+
+/**
+ * Para Type 类型参数表
+ * @author.
+ */
+entity ParaType {
+	/** 名称 */
+	name String required maxlength(256),
+    /** 编号 */
+    serialNumber String  maxlength(256),
+	/** 序号 */
+	sortString String maxlength(10),
+	/** 描述 */
+	descString String maxlength(256),
+	/** 图片附件 */
+	imageBlob    ImageBlob,
+	/** 图片附件名称 */
+	imageBlobName    String   maxlength(512),
+	/** 是否使用 */
+	usingFlag  Boolean,
+	/** 备注 */
+	remarks      String   maxlength(1000),
+	/** 有效类型 */
+	validType ValidType,
+	/** 生效开始时间 */
+	validBegin Instant,
+	/** 有效截止时间 */
+	validEnd Instant,
+	/** 创建时间 */
+	createTime  Instant,
+	/** 最后修改时间 */
+	modifyTime  Instant,
+	/** 审核时间 */
+	verifyTime       Instant
+}
+
+/**
+ * Para Classification  分类参数表
+ * @author JungleYang.
+ */
+entity ParaClass {
+	/** 名称 */
+	name String required maxlength(256),
+    /** 编号 */
+    serialNumber String  maxlength(256),
+    /** 序号 */
+	sortString String maxlength(10),
+	/** 描述 */
+	descString String maxlength(256),
+	/** 图片附件 */
+	imageBlob    ImageBlob,
+	/** 图片附件名称 */
+	imageBlobName    String   maxlength(512),
+	/** 是否使用 */
+	usingFlag  Boolean,
+	/** 备注 */
+	remarks      String   maxlength(1000),
+	/** 有效类型 */
+	validType ValidType,
+	/** 生效开始时间 */
+	validBegin Instant,
+	/** 有效截止时间 */
+	validEnd Instant,
+	/** 创建时间 */
+	createTime  Instant,
+	/** 最后修改时间 */
+	modifyTime  Instant,
+    /** 审核时间 */
+    verifyTime       Instant
+}
+
+/**
+ * Para Category  类别参数表
+ * @author JungleYang.
+ */
+entity ParaCat {
+	/** 名称 */
+	name String required maxlength(256),
+    /** 编号 */
+    serialNumber String  maxlength(256),
+	/** 序号 */
+	sortString String maxlength(10),
+	/** 描述 */
+	descString String maxlength(256),
+	/** 图片附件 */
+	imageBlob    ImageBlob,
+	/** 图片附件名称 */
+	imageBlobName    String   maxlength(512),
+	/** 是否使用 */
+	usingFlag  Boolean,
+	/** 备注 */
+	remarks      String   maxlength(1000),
+	/** 有效类型 */
+	validType ValidType,
+	/** 生效开始时间 */
+	validBegin Instant,
+	/** 有效截止时间 */
+	validEnd Instant,
+	/** 创建时间 */
+	createTime  Instant,
+	/** 最后修改时间 */
+	modifyTime  Instant,
+   /** 审核时间 */
+   verifyTime       Instant
+}
+
+
+/**
+ * Para State 状态参数表
+ * @author.
+ */
+entity ParaState {
+	/** 名称 */
+	name String required maxlength(256),
+    /** 编号 */
+    serialNumber String  maxlength(256),
+	/** 序号 */
+	sortString String maxlength(10),
+	/** 描述 */
+	descString String maxlength(256),
+	/** 图片附件 */
+	imageBlob    ImageBlob,
+	/** 图片附件名称 */
+	imageBlobName    String   maxlength(512),
+	/** 是否使用 */
+	usingFlag  Boolean,
+	/** 备注 */
+	remarks      String   maxlength(1000),
+	/** 有效类型 */
+	validType ValidType,
+	/** 生效开始时间 */
+	validBegin Instant,
+	/** 有效截止时间 */
+	validEnd Instant,
+	/** 创建时间 */
+	createTime  Instant,
+	/** 最后修改时间 */
+	modifyTime  Instant,
+    /** 审核时间 */
+    verifyTime       Instant
+}
+
+/**
+ * Para Source 来源参数表
+ * @author.
+ */
+entity ParaSource {
+	/** 名称 */
+	name String required maxlength(256),
+    /** 编号 */
+    serialNumber String  maxlength(256),
+	/** 序号 */
+	sortString String maxlength(10),
+	/** 描述 */
+	descString String maxlength(256),
+	/** 图片附件 */
+	imageBlob    ImageBlob,
+	/** 图片附件名称 */
+	imageBlobName    String   maxlength(512),
+	/** 是否使用 */
+	usingFlag  Boolean,
+	/** 备注 */
+	remarks      String   maxlength(1000),
+	/** 有效类型 */
+	validType ValidType,
+	/** 生效开始时间 */
+	validBegin Instant,
+	/** 有效截止时间 */
+	validEnd Instant,
+	/** 创建时间 */
+	createTime  Instant,
+	/** 最后修改时间 */
+	modifyTime  Instant,
+      /** 审核时间 */
+      verifyTime       Instant
+}
+
+/**
+ * Para Property 属性参数表
+ * @author.
+ */
+entity ParaProp {
+	/** 名称 */
+	name String required maxlength(256),
+    /** 编号 */
+    serialNumber String  maxlength(256),
+	/** 序号 */
+	sortString String maxlength(10),
+	/** 描述 */
+	descString String maxlength(256),
+	/** 图片附件 */
+	imageBlob    ImageBlob,
+	/** 图片附件名称 */
+	imageBlobName    String   maxlength(512),
+	/** 是否使用 */
+	usingFlag  Boolean,
+	/** 备注 */
+	remarks      String   maxlength(1000),
+	/** 有效类型 */
+	validType ValidType,
+	/** 生效开始时间 */
+	validBegin Instant,
+	/** 有效截止时间 */
+	validEnd Instant,
+	/** 创建时间 */
+	createTime  Instant,
+	/** 最后修改时间 */
+	modifyTime  Instant,
+      /** 审核时间 */
+      verifyTime       Instant
+}
+
+/**
+ * Para Attribute 特性参数表
+ * @author.
+ */
+entity ParaAttr {
+	/** 名称 */
+	name String required maxlength(256),
+    /** 编号 */
+    serialNumber String  maxlength(256),
+	/** 序号 */
+	sortString String maxlength(10),
+	/** 描述 */
+	descString String maxlength(256),
+	/** 图片附件 */
+	imageBlob    ImageBlob,
+	/** 图片附件名称 */
+	imageBlobName    String   maxlength(512),
+	/** 是否使用 */
+	usingFlag  Boolean,
+	/** 备注 */
+	remarks      String   maxlength(1000),
+	/** 有效类型 */
+	validType ValidType,
+	/** 生效开始时间 */
+	validBegin Instant,
+	/** 有效截止时间 */
+	validEnd Instant,
+	/** 创建时间 */
+	createTime  Instant,
+	/** 最后修改时间 */
+	modifyTime  Instant,
+    /** 审核时间 */
+    verifyTime       Instant
+}
+
+/**
+ * Para Other 其它属性参数表，可以多条
+ * @author.
+ */
+entity ParaOther {
+	/** 名称 */
+	name String required maxlength(256),
+    /** 编号 */
+    serialNumber String  maxlength(256),
+	/** 序号 */
+	sortString String maxlength(10),
+	/** 描述 */
+	descString String maxlength(256),
+	/** 属性值的类别 STRING, INSTANT, BOOLEAN, JSON, BLOB*/
+    paraOtherValueType ParaOtherValueType,
+	/** 字符类型的属性值 */
+    paraValueSt      String   maxlength(4000),
+    /** 时间类型的属性值 */
+    paraValueIn    Instant,
+    /** 布尔类型的属性值 */
+    paraValueBo    Boolean,
+    /** json类型的属性值 */
+    paraValueJs    String,
+    /** 二进制类型的属性值 */
+    paraValueBl    Blob,
+    /** 图片附件 */
+	imageBlob    ImageBlob,
+	/** 图片附件名称 */
+	imageBlobName    String   maxlength(512),
+	/** 是否使用 */
+	usingFlag  Boolean,
+	/** 备注 */
+	remarks      String   maxlength(1000),
+	/** 有效类型 */
+	validType ValidType,
+	/** 生效开始时间 */
+	validBegin Instant,
+	/** 有效截止时间 */
+	validEnd Instant,
+	/** 创建时间 */
+	createTime  Instant,
+	/** 最后修改时间 */
+	modifyTime  Instant,
+    /** 审核时间 */
+    verifyTime       Instant
+}
+
+/** Temporarily added ParaUser，ParaPerson，ParaDep to facilitate development */
+/**
+ * ParaUser 用户信息
+ * @author JungleYang.
+ */
+entity ParaUser  {
+    /** 用户ID */
+	userId            String   maxlength(256),
+	/** 姓名 */
+	name            String   maxlength(256),
+	/** 编号 */
+	serialNumber String  maxlength(256),
+	/** 描述 */
+	descString  String   maxlength(4000),
+	/** 工作代码 */
+	jobId               String   maxlength(256),
+	/** 姓 */
+	firstName           String   maxlength(256),
+	/** 名 */
+	lastName            String   maxlength(256),
+	/** 移动电话 */
+	mobile               String   maxlength(256),
+	/** 邮箱 */
+	mail                String   maxlength(256),
+	/** 是否使用 */
+	usingFlag  Boolean,
+	/** 备注 */
+	remarks      String   maxlength(1000)
+}
+/**
+ * ParaDep 单位信息
+ * @author JungleYang.
+ */
+entity ParaDep  {
+	/** 名称 */
+	name             String   maxlength(256),
+	/** 编号 */
+	serialNumber String  maxlength(256),
+	/** 描述 */
+	descString  String   maxlength(4000),
+	/** 电话 */
+	tel                  String   maxlength(256),
+	/** 地址 */
+	address              String   maxlength(256),
+	/** 备注 */
+	remarks      String   maxlength(1000)
+}
+
+/**
+ * ParaRole 角色信息
+ * @author JungleYang.
+ */
+entity ParaRole {
+	/** 名称 */
+	name String required maxlength(256),
+	/** 编号 */
+	serialNumber String  maxlength(256),
+	/** 序号 */
+	sortString String maxlength(10),
+	/** 描述 */
+	descString String maxlength(256),
+	/** 图片附件 */
+	imageBlob    ImageBlob,
+	/** 图片附件名称 */
+	imageBlobName    String   maxlength(512),
+	/** 是否使用 */
+	usingFlag  Boolean,
+	/** 备注 */
+	remarks      String   maxlength(1000)
+}
+
+/**
+ * ParaNode 节点信息
+ * @author JungleYang.
+ */
+entity ParaNode {
+	/** 名称 */
+	name String required maxlength(256),
+	/** 地址 */
+	link String maxlength(256),
+	/** 编号 */
+	serialNumber String  maxlength(256),
+	/** 序号 */
+	sortString String maxlength(10),
+	/** 描述 */
+	descString String maxlength(256),
+	/** 图片附件 */
+	imageBlob    ImageBlob,
+	/** 图片附件名称 */
+	imageBlobName    String   maxlength(512),
+	/** 是否使用 */
+	usingFlag  Boolean,
+	/** 备注 */
+	remarks      String   maxlength(1000)
+}
+
+//统计使用
+
+/**
+ * QueryCommon50 通用查询50
+ * @author JungleYang.
+ */
+entity QueryCommon50{
+	queryName String maxlength(256),
+	queryDate Instant,
+	queryUser String maxlength(256),
+	col01 String maxlength(4000),
+	col02 String maxlength(4000),
+	col03 String maxlength(4000),
+	col04 String maxlength(4000),
+	col05 String maxlength(4000),
+	col06 String maxlength(4000),
+	col07 String maxlength(4000),
+	col08 String maxlength(4000),
+	col09 String maxlength(4000),
+	col10 String maxlength(4000),
+	col11 String maxlength(4000),
+	col12 String maxlength(4000),
+	col13 String maxlength(4000),
+	col14 String maxlength(4000),
+	col15 String maxlength(4000),
+	col16 String maxlength(4000),
+	col17 String maxlength(4000),
+	col18 String maxlength(4000),
+	col19 String maxlength(4000),
+	col20 String maxlength(4000),
+	col21 String maxlength(4000),
+	col22 String maxlength(4000),
+	col23 String maxlength(4000),
+	col24 String maxlength(4000),
+	col25 String maxlength(4000),
+	col26 String maxlength(4000),
+	col27 String maxlength(4000),
+	col28 String maxlength(4000),
+	col29 String maxlength(4000),
+	col30 String maxlength(4000),
+	col31 String maxlength(4000),
+	col32 String maxlength(4000),
+	col33 String maxlength(4000),
+	col34 String maxlength(4000),
+	col35 String maxlength(4000),
+	col36 String maxlength(4000),
+	col37 String maxlength(4000),
+	col38 String maxlength(4000),
+	col39 String maxlength(4000),
+	col40 String maxlength(4000),
+	col41 String maxlength(4000),
+	col42 String maxlength(4000),
+	col43 String maxlength(4000),
+	col44 String maxlength(4000),
+	col45 String maxlength(4000),
+	col46 String maxlength(4000),
+	col47 String maxlength(4000),
+	col48 String maxlength(4000),
+	col49 String maxlength(4000),
+	col50 String maxlength(4000)
+}
+
+/**
+ * QueryCommon10 通用查询10
+ * @author JungleYang.
+ */
+entity QueryCommon10{
+	queryName String maxlength(256),
+	queryDate Instant,
+	queryUser String maxlength(256),
+	col01 String maxlength(4000),
+	col02 String maxlength(4000),
+	col03 String maxlength(4000),
+	col04 String maxlength(4000),
+	col05 String maxlength(4000),
+	col06 String maxlength(4000),
+	col07 String maxlength(4000),
+	col08 String maxlength(4000),
+	col09 String maxlength(4000),
+	col10 String maxlength(4000)
+}
+
+relationship ManyToOne{
+
+    //** 审核记录 */
+    KmsInfo{verifyRec(name)}  to VerifyRec,
+    //** 类型 */
+	KmsInfo{paraType(name)}  to ParaType,
+	//** 分类 */
+	KmsInfo{paraClass(name)}  to ParaClass,
+	//** 类别 */
+	KmsInfo{paraCat(name)}  to ParaCat,
+	//** 状态 */
+	KmsInfo{paraState(name)}  to ParaState,
+	//** 来源 */
+	KmsInfo{paraSource(name)}  to ParaSource,
+	//** 属性 */
+	KmsInfo{paraAttr(name)}  to ParaAttr,
+    //** 特性 */
+    KmsInfo{paraProp(name)}  to ParaProp,
+
+    //** 信息创建人员 */
+    KmsInfo{createdUser(name)}  to ParaUser ,
+    //** 信息创建单位 */
+    KmsInfo{createdDepBy(name)} to ParaDep ,
+    //** 信息所属人员 */
+	KmsInfo{ownerBy(name)}  to ParaUser ,
+    //** 信息所属单位 */
+    KmsInfo{ownerDepBy(name)} to ParaDep ,
+	//** 信息修改人员 */
+ 	KmsInfo{modifiedUser(name)} to ParaUser ,
+    //** 信息修改单位 */
+    KmsInfo{modifiedUserDep(name)} to ParaDep ,
+    //** 信息审核人员 */
+ 	KmsInfo{verifiedUser(name)} to ParaUser ,
+    //** 信息审核单位 */
+    KmsInfo{verifiedDepBy(name)} to ParaDep ,
+    //** 信息发布人员 */
+ 	KmsInfo{publishedBy(name)} to ParaUser ,
+    //** 信息发布单位 */
+    KmsInfo{publishedDepBy(name)} to ParaDep ,
+
+	//** 审核记录创建人员 */
+	VerifyRec{createdUser(name)}  to ParaUser ,
+	//** 审核记录修改人员 */
+ 	VerifyRec{modifiedUser(name)} to ParaUser ,
+
+	//** 类型创建人员 */
+	ParaType{createdUser(name)}  to ParaUser ,
+	//** 类型修改人员 */
+ 	ParaType{modifiedUser(name)} to ParaUser ,
+    //** 类型审核人员 */
+ 	ParaType{verifiedUser(name)} to ParaUser ,
+
+	//** 分类创建人员 */
+	ParaClass{createdUser(name)}  to ParaUser ,
+	//** 分类修改人员 */
+ 	ParaClass{modifiedUser(name)} to ParaUser ,
+	//** 分类审核人员 */
+ 	ParaClass{verifiedUser(name)} to ParaUser ,
+
+	//** 类别创建人员 */
+	ParaCat{createdUser(name)}  to ParaUser ,
+	//** 类别修改人员 */
+ 	ParaCat{modifiedUser(name)} to ParaUser ,
+	//** 类别审核人员 */
+ 	ParaCat{verifiedUser(name)} to ParaUser ,
+
+	//** 状态创建人员 */
+	ParaState{createdUser(name)}  to ParaUser ,
+	//** 状态修改人员 */
+ 	ParaState{modifiedUser(name)} to ParaUser ,
+	//** 状态审核人员 */
+ 	ParaState{verifiedUser(name)} to ParaUser ,
+
+	//** 来源创建人员 */
+	ParaSource{createdUser(name)}  to ParaUser ,
+	//** 来源修改人员 */
+ 	ParaSource{modifiedUser(name)} to ParaUser ,
+	//** 来源审核人员 */
+ 	ParaSource{verifiedUser(name)} to ParaUser ,
+
+    //** 属性创建人员 */
+    ParaProp{createdUser(name)}  to ParaUser ,
+    //** 属性修改人员 */
+    ParaProp{modifiedUser(name)} to ParaUser ,
+	//** 属性审核人员 */
+ 	ParaProp{verifiedUser(name)} to ParaUser ,
+
+    //** 特性创建人员 */
+    ParaAttr{createdUser(name)}  to ParaUser ,
+    //** 特性修改人员 */
+    ParaAttr{modifiedUser(name)} to ParaUser ,
+    //** 特性审核人员 */
+    ParaAttr{verifiedUser(name)} to ParaUser,
+
+    //** 其它属性创建人员 */
+    ParaOther{createdUser(name)}  to ParaUser ,
+    //** 其它属性修改人员 */
+    ParaOther{modifiedUser(name)} to ParaUser ,
+	//** 其它属性审核人员 */
+ 	ParaOther{verifiedUser(name)} to ParaUser,
+
+    //** 用户创建人员 */
+    ParaUser{createdUser(name)}  to ParaUser ,
+    //** 用户修改人员 */
+    ParaUser{modifiedUser(name)} to ParaUser ,
+	//** 用户审核人员 */
+ 	ParaUser{verifiedUser(name)} to ParaUser,
+
+    //** 单位创建人员 */
+    ParaDep{createdUser(name)}  to ParaUser ,
+    //** 单位修改人员 */
+    ParaDep{modifiedUser(name)} to ParaUser ,
+    //** 单位审核人员 */
+    ParaDep{verifiedUser(name)} to ParaUser,
+
+    //** 角色创建人员 */
+    ParaRole{createdUser(name)}  to ParaUser ,
+    //** 角色修改人员 */
+    ParaRole{modifiedUser(name)} to ParaUser ,
+    //** 角色审核人员 */
+    ParaRole{verifiedUser(name)} to ParaUser,
+
+    //** 节点创建人员 */
+    ParaNode{createdUser(name)}  to ParaUser ,
+    //** 节点修改人员 */
+    ParaNode{modifiedUser(name)} to ParaUser ,
+    //** 节点审核人员 */
+    ParaNode{verifiedUser(name)} to ParaUser,
+
+    //** 信息的父信息 */
+    KmsInfo {parent(name)} to KmsInfo,
+    //** 类型的父类型 */
+    ParaType {parent(name)} to ParaType,
+    //** 分类的父分类 */
+    ParaClass {parent(name)} to ParaClass,
+    //** 类别的父类别 */
+    ParaCat {parent(name)} to ParaCat,
+    //** 状态的父状态 */
+    ParaState {parent(name)} to ParaState,
+    //** 来源的父来源 */
+    ParaSource {parent(name)} to ParaSource,
+    //** 属性的父属性 */
+    ParaProp {parent(name)} to ParaProp,
+    //** 特性的父特性 */
+    ParaAttr {parent(name)} to ParaAttr,
+    //** 单位的父单位 */
+    ParaDep {parent(name)} to ParaDep,
+    //** 角色的父角色 */
+    ParaRole {parent(name)} to ParaRole,
+    //** 节点的父节点 */
+    ParaNode {parent(name)} to ParaNode
+}
+
+relationship ManyToMany{
+    //** 知识信息的其它属性 */
+    KmsInfo{paraOther(name)} to ParaOther{kmsInfo},
+    //** 角色和节点权限 */
+    ParaRole{paraNode(name)} to ParaNode{paraRole},
+    //** 用户和角色 */
+    ParaUser{paraRole(name)} to ParaRole{paraUser}
+}
+
+paginate  KmsInfo, VerifyRec, ParaType, ParaClass, ParaCat, ParaState, ParaSource, ParaAttr, ParaProp, ParaOther with infinite-scroll
+paginate  ParaUser, ParaDep, ParaRole, ParaNode  with infinite-scroll
+paginate  QueryCommon10, QueryCommon50  with infinite-scroll
+//paginate Cpu , OsStatus with pagination
+dto * with mapstruct
+// Set service options to all except few
+service all with serviceImpl
+// Set filter
+filter KmsInfo, VerifyRec, ParaType, ParaClass, ParaCat, ParaState, ParaSource, ParaAttr, ParaProp, ParaOther
+filter ParaUser, ParaDep, ParaRole, ParaNode
+filter QueryCommon10, QueryCommon50
+// Set an angular suffix
+angularSuffix * with sdmSuffix
+ //
+

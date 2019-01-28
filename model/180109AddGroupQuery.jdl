@@ -1,0 +1,95 @@
+//统计使用
+
+/**
+ * QueryCommon50 通用查询50 
+ * @author JungleYang.
+ */
+entity QueryCommon50{
+	queryName String maxlength(256),
+	queryDate Instant,
+	queryUser String maxlength(256),
+	col01 String maxlength(4000),
+	col02 String maxlength(4000),
+	col03 String maxlength(4000),
+	col04 String maxlength(4000),
+	col05 String maxlength(4000),
+	col06 String maxlength(4000),
+	col07 String maxlength(4000),
+	col08 String maxlength(4000),
+	col09 String maxlength(4000),
+	col10 String maxlength(4000),
+	col11 String maxlength(4000),
+	col12 String maxlength(4000),
+	col13 String maxlength(4000),
+	col14 String maxlength(4000),
+	col15 String maxlength(4000),
+	col16 String maxlength(4000),
+	col17 String maxlength(4000),
+	col18 String maxlength(4000),
+	col19 String maxlength(4000),
+	col20 String maxlength(4000),
+	col21 String maxlength(4000),
+	col22 String maxlength(4000),
+	col23 String maxlength(4000),
+	col24 String maxlength(4000),
+	col25 String maxlength(4000),
+	col26 String maxlength(4000),
+	col27 String maxlength(4000),
+	col28 String maxlength(4000),
+	col29 String maxlength(4000),
+	col30 String maxlength(4000),
+	col31 String maxlength(4000),
+	col32 String maxlength(4000),
+	col33 String maxlength(4000),
+	col34 String maxlength(4000),
+	col35 String maxlength(4000),
+	col36 String maxlength(4000),
+	col37 String maxlength(4000),
+	col38 String maxlength(4000),
+	col39 String maxlength(4000),
+	col40 String maxlength(4000),
+	col41 String maxlength(4000),
+	col42 String maxlength(4000),
+	col43 String maxlength(4000),
+	col44 String maxlength(4000),
+	col45 String maxlength(4000),
+	col46 String maxlength(4000),
+	col47 String maxlength(4000),
+	col48 String maxlength(4000),
+	col49 String maxlength(4000),
+	col50 String maxlength(4000)
+}
+
+/**
+ * QueryCommon10 通用查询10 
+ * @author JungleYang.
+ */
+entity QueryCommon10{
+	queryName String maxlength(256),
+	queryDate Instant,
+	queryUser String maxlength(256),
+	col01 String maxlength(4000),
+	col02 String maxlength(4000),
+	col03 String maxlength(4000),
+	col04 String maxlength(4000),
+	col05 String maxlength(4000),
+	col06 String maxlength(4000),
+	col07 String maxlength(4000),
+	col08 String maxlength(4000),
+	col09 String maxlength(4000),
+	col10 String maxlength(4000)
+}
+
+paginate  QueryCommon10, QueryCommon50 with infinite-scroll
+//paginate with pagination
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set filter
+filter  QueryCommon10, QueryCommon50 
+
+// Set an angular suffix
+angularSuffix * with sdmSuffix
+

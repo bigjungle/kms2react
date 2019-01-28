@@ -1,0 +1,94 @@
+//Mspsso 为了适配 九州云腾 sso
+/**
+ * for sso
+ * @author JungleYang.
+ */
+entity Mspsso {
+   personId  String maxlength(256),
+   userPassword        String maxlength(640),
+   processPassword     String maxlength(640),
+   userSort            String maxlength(10),
+   userPasswordValidateTimes Integer,
+   userPasswordLockFlag String maxlength(10),
+   procPasswordValidateTimes Integer,
+   procPasswordLockFlag String maxlength(10),
+   userProp            String maxlength(256),
+   by01                 String maxlength(256),
+   by02                 String maxlength(256),
+   by03                 String maxlength(256),
+   by04                 String maxlength(256),
+   by05                 String maxlength(256),
+   validType           String maxlength(10),
+   validBegin          Instant,
+   validEnd            Instant,
+   insertUserId       String maxlength(256),
+   insertPersonId     String maxlength(256),
+   insertTime          Instant,
+   updateUserId       String maxlength(256),
+   updatePersonId     String maxlength(256),
+   updateTime          Instant,
+   jsonString   String maxlength(4000),
+   userId        String maxlength(640),
+   userName        String maxlength(640),
+   userDesc        String maxlength(640),
+   userPasswordLockFlag        String maxlength(640),
+   validEnd        String maxlength(640),
+   procPasswordLockFlag        String maxlength(640),
+   mobile        String maxlength(640),
+   mail        String maxlength(640),
+   depId        String maxlength(640)
+}
+
+/**
+ * for sso
+ * @author JungleYang.
+ */
+entity Sso {
+   personId  String maxlength(256),
+   userPassword        String maxlength(640),
+   processPassword     String maxlength(640),
+   userSort            String maxlength(10),
+   userPasswordValidateTimes Integer,
+   userPasswordLockFlag String maxlength(10),
+   procPasswordValidateTimes Integer,
+   procPasswordLockFlag String maxlength(10),
+   userProp            String maxlength(256),
+   by01                 String maxlength(256),
+   by02                 String maxlength(256),
+   by03                 String maxlength(256),
+   by04                 String maxlength(256),
+   by05                 String maxlength(256),
+   validType           String maxlength(10),
+   validBegin          Instant,
+   validEnd            Instant,
+   insertUserId       String maxlength(256),
+   insertPersonId     String maxlength(256),
+   insertTime          Instant,
+   updateUserId       String maxlength(256),
+   updatePersonId     String maxlength(256),
+   updateTime          Instant,
+   jsonString   String maxlength(4000),
+   userId        String maxlength(640),
+   userName        String maxlength(640),
+   userDesc        String maxlength(640),
+   userPasswordLockFlag        String maxlength(640),
+   validEnd        String maxlength(640),
+   procPasswordLockFlag        String maxlength(640),
+   mobile        String maxlength(640),
+   mail        String maxlength(640),
+   depId        String maxlength(640),
+   code     String maxlength(640)
+}
+
+
+paginate  Mspsso, Sso  with infinite-scroll
+//paginate with pagination
+dto * with mapstruct
+// Set service options to all except few
+service all with serviceImpl
+// Set filter
+filter Mspsso, Sso
+// Set an angular suffix
+angularSuffix * with sdmSuffix
+//
+

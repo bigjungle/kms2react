@@ -36,9 +36,9 @@ spring:
             indent-output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/kms
-        username: kms
-        password:
+        url: jdbc:postgresql://192.168.10.184:5432/aldb?currentSchema=kms2
+        username: asys
+        password: asys
         hikari:
             poolName: Hikari
             auto-commit: false
@@ -54,10 +54,8 @@ spring:
             hibernate.generate_statistics: true
             hibernate.cache.region.factory_class: io.github.jhipster.config.jcache.BeanClassLoaderAwareJCacheRegionFactory
     data:
-        elasticsearch:
-            properties:
-                path:
-                    home: target/elasticsearch
+        jest:
+            uri: http://192.168.10.195:9200
     liquibase:
         contexts: dev
     mail:
