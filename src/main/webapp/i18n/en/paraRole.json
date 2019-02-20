@@ -1,0 +1,45 @@
+{
+  "kmsApp": {
+    "paraRole": {
+      "home": {
+        "title": "Para Roles",
+        "createLabel": "Create a new Para Role",
+        "createOrEditLabel": "Create or edit a Para Role",
+        "search": "Search for Para Role"
+      },
+      "created": "A new Para Role is created with identifier {{ param }}",
+      "updated": "A Para Role is updated with identifier {{ param }}",
+      "deleted": "A Para Role is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Para Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Para Role"
+      },
+      "name": "Name",
+      "serialNumber": "Serial Number",
+      "sortString": "Sort String",
+      "descString": "Desc String",
+      "imageBlob": "Image Blob",
+      "imageBlobName": "Image Blob Name",
+      "usingFlag": "Using Flag",
+      "remarks": "Remarks",
+      "createdUser": "Created User",
+      "modifiedUser": "Modified User",
+      "verifiedUser": "Verified User",
+      "parent": "Parent",
+      "paraNode": "Para Node",
+      "paraUser": "Para User",
+      "help": {
+        "name": "名称",
+        "serialNumber": "编号",
+        "sortString": "序号",
+        "descString": "描述",
+        "imageBlob": "图片附件",
+        "imageBlobName": "图片附件名称",
+        "usingFlag": "是否使用",
+        "remarks": "备注"
+      }
+    }
+  }
+}

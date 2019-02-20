@@ -7,6 +7,22 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "数据",
+        "kmsInfoSdmSuffix": "Kms Info",
+        "verifyRecSdmSuffix": "Verify Rec",
+        "paraTypeSdmSuffix": "Para Type",
+        "paraClassSdmSuffix": "Para Class",
+        "paraCatSdmSuffix": "Para Cat",
+        "paraStateSdmSuffix": "Para State",
+        "paraSourceSdmSuffix": "Para Source",
+        "paraPropSdmSuffix": "Para Prop",
+        "paraAttrSdmSuffix": "Para Attr",
+        "paraOtherSdmSuffix": "Para Other",
+        "paraUserSdmSuffix": "Para User",
+        "paraDepSdmSuffix": "Para Dep",
+        "paraRoleSdmSuffix": "Para Role",
+        "paraNodeSdmSuffix": "Para Node",
+        "queryCommon50SdmSuffix": "Query Common 50",
+        "queryCommon10SdmSuffix": "Query Common 10",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

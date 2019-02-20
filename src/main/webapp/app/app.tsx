@@ -13,6 +13,7 @@ import { getProfile } from 'app/shared/reducers/application-profile';
 import { setLocale } from 'app/shared/reducers/locale';
 import Header from 'app/shared/layout/header/header';
 import Footer from 'app/shared/layout/footer/footer';
+import Sider from 'app/shared/layout/sider/sider';
 import { hasAnyAuthority } from 'app/shared/auth/private-route';
 import ErrorBoundary from 'app/shared/error/error-boundary';
 import { AUTHORITIES } from 'app/config/constants';
@@ -46,8 +47,17 @@ export class App extends React.Component<IAppProps> {
               isInProduction={this.props.isInProduction}
               isSwaggerEnabled={this.props.isSwaggerEnabled}
             />
+            <Sider
+              isAuthenticated={this.props.isAuthenticated}
+              isAdmin={this.props.isAdmin}
+              currentLocale={this.props.currentLocale}
+              onLocaleChange={this.props.setLocale}
+              ribbonEnv={this.props.ribbonEnv}
+              isInProduction={this.props.isInProduction}
+              isSwaggerEnabled={this.props.isSwaggerEnabled}
+            />
           </ErrorBoundary>
-          <div className="container-fluid view-container" id="app-view-container">
+          <div className="container-fluid view-container" id="app-view-container" width="95%">
             <Card className="jh-card">
               <ErrorBoundary>
                 <AppRoutes />

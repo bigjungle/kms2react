@@ -1,0 +1,12 @@
+{
+  "kmsApp": {
+    "ParaOtherValueType": {
+      "null": "",
+      "STRING": "STRING",
+      "INSTANT": "INSTANT",
+      "BOOLEAN": "BOOLEAN",
+      "JSON": "JSON",
+      "BLOB": "BLOB"
+    }
+  }
+}

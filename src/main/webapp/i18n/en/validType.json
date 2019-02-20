@@ -1,0 +1,9 @@
+{
+  "kmsApp": {
+    "ValidType": {
+      "null": "",
+      "LONG": "LONG",
+      "SCOPE": "SCOPE"
+    }
+  }
+}

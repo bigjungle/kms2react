@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity ParaClass.
+    -->
+    <changeSet id="20190128074846-1" author="jhipster">
+        <createTable tableName="para_class" remarks="Para Classification  分类参数表 @author JungleYang.">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(256)" remarks="名称">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="serial_number" type="varchar(256)" remarks="编号">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sort_string" type="varchar(10)" remarks="序号">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="desc_string" type="varchar(256)" remarks="描述">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="image_blob" type="longblob" remarks="图片附件">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_blob_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="image_blob_name" type="varchar(512)" remarks="图片附件名称">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="using_flag" type="boolean" remarks="是否使用">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="remarks" type="varchar(1000)" remarks="备注">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_type" type="varchar(255)" remarks="有效类型">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_begin" type="datetime" remarks="生效开始时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_end" type="datetime" remarks="有效截止时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="create_time" type="datetime" remarks="创建时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="modify_time" type="datetime" remarks="最后修改时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="verify_time" type="datetime" remarks="审核时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="modified_user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="verified_user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="parent_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="para_class" columnName="valid_begin" columnDataType="datetime"/>
+        <dropDefaultValue tableName="para_class" columnName="valid_end" columnDataType="datetime"/>
+        <dropDefaultValue tableName="para_class" columnName="create_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="para_class" columnName="modify_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="para_class" columnName="verify_time" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

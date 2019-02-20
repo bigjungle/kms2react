@@ -1,0 +1,139 @@
+{
+    "name": "ParaProp",
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 256
+        },
+        {
+            "fieldName": "serialNumber",
+            "javadoc": "编号",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 256
+        },
+        {
+            "fieldName": "sortString",
+            "javadoc": "序号",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "descString",
+            "javadoc": "描述",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 256
+        },
+        {
+            "fieldName": "imageBlob",
+            "javadoc": "图片附件",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "imageBlobName",
+            "javadoc": "图片附件名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 512
+        },
+        {
+            "fieldName": "usingFlag",
+            "javadoc": "是否使用",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "remarks",
+            "javadoc": "备注",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "validType",
+            "javadoc": "有效类型",
+            "fieldType": "ValidType",
+            "fieldValues": "LONG,SCOPE"
+        },
+        {
+            "fieldName": "validBegin",
+            "javadoc": "生效开始时间",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "validEnd",
+            "javadoc": "有效截止时间",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "createTime",
+            "javadoc": "创建时间",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "modifyTime",
+            "javadoc": "最后修改时间",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "verifyTime",
+            "javadoc": "审核时间",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "createdUser",
+            "otherEntityName": "paraUser",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "modifiedUser",
+            "otherEntityName": "paraUser",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "verifiedUser",
+            "otherEntityName": "paraUser",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "parent",
+            "otherEntityName": "paraProp",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20190128074850",
+    "javadoc": "Para Property 属性参数表\n@author.",
+    "entityTableName": "para_prop",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "sdmSuffix"
+}

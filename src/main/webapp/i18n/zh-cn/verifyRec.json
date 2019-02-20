@@ -1,0 +1,39 @@
+{
+  "kmsApp": {
+    "verifyRec": {
+      "home": {
+        "title": "Verify Recs",
+        "createLabel": "创建新 Verify Rec",
+        "createOrEditLabel": "创建或编辑 Verify Rec",
+        "search": "查找 Verify Rec"
+      },
+      "created": "Verify Rec {{ param }} 创建成功",
+      "updated": "Verify Rec {{ param }} 更新成功",
+      "deleted": "Verify Rec {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Verify Rec {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Verify Rec"
+      },
+      "name": "Name",
+      "descString": "Desc String",
+      "verifyResult": "Verify Result",
+      "verifyScore": "Verify Score",
+      "remarks": "Remarks",
+      "createTime": "Create Time",
+      "modifyTime": "Modify Time",
+      "createdUser": "Created User",
+      "modifiedUser": "Modified User",
+      "help": {
+        "name": "名称",
+        "descString": "描述",
+        "verifyResult": "审核结果",
+        "verifyScore": "审核得分",
+        "remarks": "备注",
+        "createTime": "创建时间",
+        "modifyTime": "最后修改时间"
+      }
+    }
+  }
+}

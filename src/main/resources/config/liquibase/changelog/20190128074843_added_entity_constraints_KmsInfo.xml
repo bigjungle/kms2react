@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity KmsInfo.
+    -->
+    <changeSet id="20190128074843-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="verify_rec_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_verify_rec_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="verify_rec"/>
+
+        <addForeignKeyConstraint baseColumnNames="para_type_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_para_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="para_class_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_para_class_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_class"/>
+
+        <addForeignKeyConstraint baseColumnNames="para_cat_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_para_cat_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_cat"/>
+
+        <addForeignKeyConstraint baseColumnNames="para_state_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_para_state_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_state"/>
+
+        <addForeignKeyConstraint baseColumnNames="para_source_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_para_source_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_source"/>
+
+        <addForeignKeyConstraint baseColumnNames="para_attr_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_para_attr_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_attr"/>
+
+        <addForeignKeyConstraint baseColumnNames="para_prop_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_para_prop_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_prop"/>
+
+        <addForeignKeyConstraint baseColumnNames="created_user_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_created_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="created_dep_by_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_created_dep_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_dep"/>
+
+        <addForeignKeyConstraint baseColumnNames="owner_by_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_owner_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="owner_dep_by_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_owner_dep_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_dep"/>
+
+        <addForeignKeyConstraint baseColumnNames="modified_user_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_modified_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="modified_user_dep_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_modified_user_dep_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_dep"/>
+
+        <addForeignKeyConstraint baseColumnNames="verified_user_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_verified_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="verified_dep_by_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_verified_dep_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_dep"/>
+
+        <addForeignKeyConstraint baseColumnNames="published_by_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_published_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="published_dep_by_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_published_dep_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_dep"/>
+
+        <addForeignKeyConstraint baseColumnNames="parent_id"
+                                 baseTableName="kms_info"
+                                 constraintName="fk_kms_info_parent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kms_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="kms_info_id"
+                                 baseTableName="kms_info_para_other"
+                                 constraintName="fk_kms_info_para_other_kms_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kms_info"/>
+        <addForeignKeyConstraint baseColumnNames="para_other_id"
+                                 baseTableName="kms_info_para_other"
+                                 constraintName="fk_kms_info_para_other_para_other_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="para_other"/>
+        
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,46 @@
+{
+  "kmsApp": {
+    "paraNode": {
+      "home": {
+        "title": "Para Nodes",
+        "createLabel": "Create a new Para Node",
+        "createOrEditLabel": "Create or edit a Para Node",
+        "search": "Search for Para Node"
+      },
+      "created": "A new Para Node is created with identifier {{ param }}",
+      "updated": "A Para Node is updated with identifier {{ param }}",
+      "deleted": "A Para Node is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Para Node {{ id }}?"
+      },
+      "detail": {
+        "title": "Para Node"
+      },
+      "name": "Name",
+      "link": "Link",
+      "serialNumber": "Serial Number",
+      "sortString": "Sort String",
+      "descString": "Desc String",
+      "imageBlob": "Image Blob",
+      "imageBlobName": "Image Blob Name",
+      "usingFlag": "Using Flag",
+      "remarks": "Remarks",
+      "createdUser": "Created User",
+      "modifiedUser": "Modified User",
+      "verifiedUser": "Verified User",
+      "parent": "Parent",
+      "paraRole": "Para Role",
+      "help": {
+        "name": "名称",
+        "link": "地址",
+        "serialNumber": "编号",
+        "sortString": "序号",
+        "descString": "描述",
+        "imageBlob": "图片附件",
+        "imageBlobName": "图片附件名称",
+        "usingFlag": "是否使用",
+        "remarks": "备注"
+      }
+    }
+  }
+}

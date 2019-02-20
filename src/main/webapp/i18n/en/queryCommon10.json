@@ -1,0 +1,34 @@
+{
+  "kmsApp": {
+    "queryCommon10": {
+      "home": {
+        "title": "Query Common 10 S",
+        "createLabel": "Create a new Query Common 10",
+        "createOrEditLabel": "Create or edit a Query Common 10",
+        "search": "Search for Query Common 10"
+      },
+      "created": "A new Query Common 10 is created with identifier {{ param }}",
+      "updated": "A Query Common 10 is updated with identifier {{ param }}",
+      "deleted": "A Query Common 10 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Query Common 10 {{ id }}?"
+      },
+      "detail": {
+        "title": "Query Common 10"
+      },
+      "queryName": "Query Name",
+      "queryDate": "Query Date",
+      "queryUser": "Query User",
+      "col01": "Col 01",
+      "col02": "Col 02",
+      "col03": "Col 03",
+      "col04": "Col 04",
+      "col05": "Col 05",
+      "col06": "Col 06",
+      "col07": "Col 07",
+      "col08": "Col 08",
+      "col09": "Col 09",
+      "col10": "Col 10"
+    }
+  }
+}

@@ -1,0 +1,342 @@
+{
+    "name": "KmsInfo",
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "serialNumber",
+            "javadoc": "编号",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 256
+        },
+        {
+            "fieldName": "sortString",
+            "javadoc": "序号",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "descString",
+            "javadoc": "描述",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "answer",
+            "javadoc": "答案",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "usingFlag",
+            "javadoc": "是否使用",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "versionNumber",
+            "javadoc": "版本号",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 256
+        },
+        {
+            "fieldName": "remarks",
+            "javadoc": "备注",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "attachmentPath",
+            "javadoc": "附件路径",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "attachmentBlob",
+            "javadoc": "附件",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "attachmentName",
+            "javadoc": "附件名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "textBlob",
+            "javadoc": "文本附件",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "imageBlob",
+            "javadoc": "图片附件",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "imageBlobName",
+            "javadoc": "附件名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "validType",
+            "javadoc": "有效类型",
+            "fieldType": "ValidType",
+            "fieldValues": "LONG,SCOPE"
+        },
+        {
+            "fieldName": "validBegin",
+            "javadoc": "生效开始时间",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "validEnd",
+            "javadoc": "有效截止时间",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "createTime",
+            "javadoc": "创建时间",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "modifyTime",
+            "javadoc": "最后修改时间",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "verifyTime",
+            "javadoc": "审核时间",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "publishedTime",
+            "javadoc": "发布时间",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "verifyNeed",
+            "javadoc": "是否需要审核",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "markAsVerified",
+            "javadoc": "审核完成标识",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "verifyResult",
+            "javadoc": "审核结果",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "verifyOpinion",
+            "javadoc": "审核意见",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "viewCount",
+            "javadoc": "查看次数",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "viewPermission",
+            "javadoc": "查看权限类别",
+            "fieldType": "ViewPermission",
+            "fieldValues": "PRIVATEVIEW,DEFAULTVIEW,PROTECTVIEW,PUBLICVIEW,CUSTOMVIEW"
+        },
+        {
+            "fieldName": "viewPermPerson",
+            "javadoc": "查看权限人员Json",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "paraSourceString",
+            "javadoc": "来源相关信息",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "verifyRec",
+            "otherEntityName": "verifyRec",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "paraType",
+            "otherEntityName": "paraType",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "paraClass",
+            "otherEntityName": "paraClass",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "paraCat",
+            "otherEntityName": "paraCat",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "paraState",
+            "otherEntityName": "paraState",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "paraSource",
+            "otherEntityName": "paraSource",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "paraAttr",
+            "otherEntityName": "paraAttr",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "paraProp",
+            "otherEntityName": "paraProp",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "createdUser",
+            "otherEntityName": "paraUser",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "createdDepBy",
+            "otherEntityName": "paraDep",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "ownerBy",
+            "otherEntityName": "paraUser",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "ownerDepBy",
+            "otherEntityName": "paraDep",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "modifiedUser",
+            "otherEntityName": "paraUser",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "modifiedUserDep",
+            "otherEntityName": "paraDep",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "verifiedUser",
+            "otherEntityName": "paraUser",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "verifiedDepBy",
+            "otherEntityName": "paraDep",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "publishedBy",
+            "otherEntityName": "paraUser",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "publishedDepBy",
+            "otherEntityName": "paraDep",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "parent",
+            "otherEntityName": "kmsInfo",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "kmsInfo",
+            "relationshipName": "paraOther",
+            "otherEntityName": "paraOther",
+            "otherEntityField": "name",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190128074843",
+    "javadoc": "kmsInfo 知识库信息表\n@author JungleYang.",
+    "entityTableName": "kms_info",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "sdmSuffix"
+}

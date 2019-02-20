@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity VerifyRec.
+    -->
+    <changeSet id="20190128074844-1" author="jhipster">
+        <createTable tableName="verify_rec" remarks="Verify Record 审核记录表 @author.">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(256)" remarks="名称">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="desc_string" type="varchar(256)" remarks="描述">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="verify_result" type="boolean" remarks="审核结果">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="verify_score" type="integer" remarks="审核得分">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="remarks" type="varchar(1000)" remarks="备注">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="create_time" type="datetime" remarks="创建时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="modify_time" type="datetime" remarks="最后修改时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="modified_user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="verify_rec" columnName="create_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="verify_rec" columnName="modify_time" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

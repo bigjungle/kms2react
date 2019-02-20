@@ -38,6 +38,28 @@ public class CacheConfiguration {
             cm.createCache(com.aerothinker.kms.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.aerothinker.kms.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.aerothinker.kms.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.KmsInfo.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.KmsInfo.class.getName() + ".paraOthers", jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.VerifyRec.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaType.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaClass.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaCat.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaState.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaSource.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaProp.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaAttr.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaOther.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaOther.class.getName() + ".kmsInfos", jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaUser.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaUser.class.getName() + ".paraRoles", jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaDep.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaRole.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaRole.class.getName() + ".paraNodes", jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaRole.class.getName() + ".paraUsers", jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaNode.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.ParaNode.class.getName() + ".paraRoles", jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.QueryCommon50.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aerothinker.kms.domain.QueryCommon10.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

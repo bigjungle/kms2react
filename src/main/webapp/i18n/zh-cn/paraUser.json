@@ -1,0 +1,49 @@
+{
+  "kmsApp": {
+    "paraUser": {
+      "home": {
+        "title": "Para Users",
+        "createLabel": "创建新 Para User",
+        "createOrEditLabel": "创建或编辑 Para User",
+        "search": "查找 Para User"
+      },
+      "created": "Para User {{ param }} 创建成功",
+      "updated": "Para User {{ param }} 更新成功",
+      "deleted": "Para User {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Para User {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Para User"
+      },
+      "userId": "User Id",
+      "name": "Name",
+      "serialNumber": "Serial Number",
+      "descString": "Desc String",
+      "jobId": "Job Id",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "mobile": "Mobile",
+      "mail": "Mail",
+      "usingFlag": "Using Flag",
+      "remarks": "Remarks",
+      "createdUser": "Created User",
+      "modifiedUser": "Modified User",
+      "verifiedUser": "Verified User",
+      "paraRole": "Para Role",
+      "help": {
+        "userId": "用户ID",
+        "name": "姓名",
+        "serialNumber": "编号",
+        "descString": "描述",
+        "jobId": "工作代码",
+        "firstName": "姓",
+        "lastName": "名",
+        "mobile": "移动电话",
+        "mail": "邮箱",
+        "usingFlag": "是否使用",
+        "remarks": "备注"
+      }
+    }
+  }
+}

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity KmsInfo.
+    -->
+    <changeSet id="20190128074843-1" author="jhipster">
+        <createTable tableName="kms_info" remarks="kmsInfo 知识库信息表 @author JungleYang.">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(4000)" remarks="名称">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="serial_number" type="varchar(256)" remarks="编号">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sort_string" type="varchar(10)" remarks="序号">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="desc_string" type="varchar(4000)" remarks="描述">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="answer" type="varchar(4000)" remarks="答案">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="using_flag" type="boolean" remarks="是否使用">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="version_number" type="varchar(256)" remarks="版本号">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="remarks" type="varchar(4000)" remarks="备注">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="attachment_path" type="varchar(4000)" remarks="附件路径">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="attachment_blob" type="longblob" remarks="附件">
+                <constraints nullable="true" />
+            </column>
+            <column name="attachment_blob_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="attachment_name" type="varchar(4000)" remarks="附件名称">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="text_blob" type="clob" remarks="文本附件">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="image_blob" type="longblob" remarks="图片附件">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_blob_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="image_blob_name" type="varchar(4000)" remarks="附件名称">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_type" type="varchar(255)" remarks="有效类型">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_begin" type="datetime" remarks="生效开始时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valid_end" type="datetime" remarks="有效截止时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="create_time" type="datetime" remarks="创建时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="modify_time" type="datetime" remarks="最后修改时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="verify_time" type="datetime" remarks="审核时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="published_time" type="datetime" remarks="发布时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="verify_need" type="boolean" remarks="是否需要审核">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mark_as_verified" type="boolean" remarks="审核完成标识">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="verify_result" type="boolean" remarks="审核结果">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="verify_opinion" type="varchar(4000)" remarks="审核意见">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="view_count" type="integer" remarks="查看次数">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="view_permission" type="varchar(255)" remarks="查看权限类别">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="view_perm_person" type="varchar(4000)" remarks="查看权限人员Json">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="para_source_string" type="varchar(4000)" remarks="来源相关信息">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="verify_rec_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="para_type_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="para_class_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="para_cat_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="para_state_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="para_source_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="para_attr_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="para_prop_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_dep_by_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="owner_by_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="owner_dep_by_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="modified_user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="modified_user_dep_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="verified_user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="verified_dep_by_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="published_by_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="published_dep_by_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="parent_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="kms_info" columnName="valid_begin" columnDataType="datetime"/>
+        <dropDefaultValue tableName="kms_info" columnName="valid_end" columnDataType="datetime"/>
+        <dropDefaultValue tableName="kms_info" columnName="create_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="kms_info" columnName="modify_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="kms_info" columnName="verify_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="kms_info" columnName="published_time" columnDataType="datetime"/>
+        
+        <createTable tableName="kms_info_para_other">
+            <column name="para_other_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="kms_info_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="kms_info_id, para_other_id" tableName="kms_info_para_other"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

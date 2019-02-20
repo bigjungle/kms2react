@@ -1,0 +1,55 @@
+{
+  "kmsApp": {
+    "paraSource": {
+      "home": {
+        "title": "Para Sources",
+        "createLabel": "创建新 Para Source",
+        "createOrEditLabel": "创建或编辑 Para Source",
+        "search": "查找 Para Source"
+      },
+      "created": "Para Source {{ param }} 创建成功",
+      "updated": "Para Source {{ param }} 更新成功",
+      "deleted": "Para Source {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Para Source {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Para Source"
+      },
+      "name": "Name",
+      "serialNumber": "Serial Number",
+      "sortString": "Sort String",
+      "descString": "Desc String",
+      "imageBlob": "Image Blob",
+      "imageBlobName": "Image Blob Name",
+      "usingFlag": "Using Flag",
+      "remarks": "Remarks",
+      "validType": "Valid Type",
+      "validBegin": "Valid Begin",
+      "validEnd": "Valid End",
+      "createTime": "Create Time",
+      "modifyTime": "Modify Time",
+      "verifyTime": "Verify Time",
+      "createdUser": "Created User",
+      "modifiedUser": "Modified User",
+      "verifiedUser": "Verified User",
+      "parent": "Parent",
+      "help": {
+        "name": "名称",
+        "serialNumber": "编号",
+        "sortString": "序号",
+        "descString": "描述",
+        "imageBlob": "图片附件",
+        "imageBlobName": "图片附件名称",
+        "usingFlag": "是否使用",
+        "remarks": "备注",
+        "validType": "有效类型",
+        "validBegin": "生效开始时间",
+        "validEnd": "有效截止时间",
+        "createTime": "创建时间",
+        "modifyTime": "最后修改时间",
+        "verifyTime": "审核时间"
+      }
+    }
+  }
+}

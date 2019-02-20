@@ -1,0 +1,39 @@
+{
+  "kmsApp": {
+    "paraDep": {
+      "home": {
+        "title": "Para Deps",
+        "createLabel": "创建新 Para Dep",
+        "createOrEditLabel": "创建或编辑 Para Dep",
+        "search": "查找 Para Dep"
+      },
+      "created": "Para Dep {{ param }} 创建成功",
+      "updated": "Para Dep {{ param }} 更新成功",
+      "deleted": "Para Dep {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Para Dep {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Para Dep"
+      },
+      "name": "Name",
+      "serialNumber": "Serial Number",
+      "descString": "Desc String",
+      "tel": "Tel",
+      "address": "Address",
+      "remarks": "Remarks",
+      "createdUser": "Created User",
+      "modifiedUser": "Modified User",
+      "verifiedUser": "Verified User",
+      "parent": "Parent",
+      "help": {
+        "name": "名称",
+        "serialNumber": "编号",
+        "descString": "描述",
+        "tel": "电话",
+        "address": "地址",
+        "remarks": "备注"
+      }
+    }
+  }
+}

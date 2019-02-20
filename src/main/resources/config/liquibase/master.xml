@@ -5,6 +5,36 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074843_added_entity_KmsInfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074844_added_entity_VerifyRec.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074845_added_entity_ParaType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074846_added_entity_ParaClass.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074847_added_entity_ParaCat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074848_added_entity_ParaState.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074849_added_entity_ParaSource.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074850_added_entity_ParaProp.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074851_added_entity_ParaAttr.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074852_added_entity_ParaOther.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074853_added_entity_ParaUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074854_added_entity_ParaDep.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074855_added_entity_ParaRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074856_added_entity_ParaNode.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074857_added_entity_QueryCommon50.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074858_added_entity_QueryCommon10.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190128074843_added_entity_constraints_KmsInfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074844_added_entity_constraints_VerifyRec.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074845_added_entity_constraints_ParaType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074846_added_entity_constraints_ParaClass.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074847_added_entity_constraints_ParaCat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074848_added_entity_constraints_ParaState.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074849_added_entity_constraints_ParaSource.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074850_added_entity_constraints_ParaProp.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074851_added_entity_constraints_ParaAttr.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074852_added_entity_constraints_ParaOther.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074853_added_entity_constraints_ParaUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074854_added_entity_constraints_ParaDep.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074855_added_entity_constraints_ParaRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190128074856_added_entity_constraints_ParaNode.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

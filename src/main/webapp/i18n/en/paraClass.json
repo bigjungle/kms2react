@@ -1,0 +1,55 @@
+{
+  "kmsApp": {
+    "paraClass": {
+      "home": {
+        "title": "Para Classes",
+        "createLabel": "Create a new Para Class",
+        "createOrEditLabel": "Create or edit a Para Class",
+        "search": "Search for Para Class"
+      },
+      "created": "A new Para Class is created with identifier {{ param }}",
+      "updated": "A Para Class is updated with identifier {{ param }}",
+      "deleted": "A Para Class is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Para Class {{ id }}?"
+      },
+      "detail": {
+        "title": "Para Class"
+      },
+      "name": "Name",
+      "serialNumber": "Serial Number",
+      "sortString": "Sort String",
+      "descString": "Desc String",
+      "imageBlob": "Image Blob",
+      "imageBlobName": "Image Blob Name",
+      "usingFlag": "Using Flag",
+      "remarks": "Remarks",
+      "validType": "Valid Type",
+      "validBegin": "Valid Begin",
+      "validEnd": "Valid End",
+      "createTime": "Create Time",
+      "modifyTime": "Modify Time",
+      "verifyTime": "Verify Time",
+      "createdUser": "Created User",
+      "modifiedUser": "Modified User",
+      "verifiedUser": "Verified User",
+      "parent": "Parent",
+      "help": {
+        "name": "名称",
+        "serialNumber": "编号",
+        "sortString": "序号",
+        "descString": "描述",
+        "imageBlob": "图片附件",
+        "imageBlobName": "图片附件名称",
+        "usingFlag": "是否使用",
+        "remarks": "备注",
+        "validType": "有效类型",
+        "validBegin": "生效开始时间",
+        "validEnd": "有效截止时间",
+        "createTime": "创建时间",
+        "modifyTime": "最后修改时间",
+        "verifyTime": "审核时间"
+      }
+    }
+  }
+}

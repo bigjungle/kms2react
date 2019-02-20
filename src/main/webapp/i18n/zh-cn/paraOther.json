@@ -1,0 +1,67 @@
+{
+  "kmsApp": {
+    "paraOther": {
+      "home": {
+        "title": "Para Others",
+        "createLabel": "创建新 Para Other",
+        "createOrEditLabel": "创建或编辑 Para Other",
+        "search": "查找 Para Other"
+      },
+      "created": "Para Other {{ param }} 创建成功",
+      "updated": "Para Other {{ param }} 更新成功",
+      "deleted": "Para Other {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Para Other {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Para Other"
+      },
+      "name": "Name",
+      "serialNumber": "Serial Number",
+      "sortString": "Sort String",
+      "descString": "Desc String",
+      "paraOtherValueType": "Para Other Value Type",
+      "paraValueSt": "Para Value St",
+      "paraValueIn": "Para Value In",
+      "paraValueBo": "Para Value Bo",
+      "paraValueJs": "Para Value Js",
+      "paraValueBl": "Para Value Bl",
+      "imageBlob": "Image Blob",
+      "imageBlobName": "Image Blob Name",
+      "usingFlag": "Using Flag",
+      "remarks": "Remarks",
+      "validType": "Valid Type",
+      "validBegin": "Valid Begin",
+      "validEnd": "Valid End",
+      "createTime": "Create Time",
+      "modifyTime": "Modify Time",
+      "verifyTime": "Verify Time",
+      "createdUser": "Created User",
+      "modifiedUser": "Modified User",
+      "verifiedUser": "Verified User",
+      "kmsInfo": "Kms Info",
+      "help": {
+        "name": "名称",
+        "serialNumber": "编号",
+        "sortString": "序号",
+        "descString": "描述",
+        "paraOtherValueType": "属性值的类别 STRING, INSTANT, BOOLEAN, JSON, BLOB",
+        "paraValueSt": "字符类型的属性值",
+        "paraValueIn": "时间类型的属性值",
+        "paraValueBo": "布尔类型的属性值",
+        "paraValueJs": "json类型的属性值",
+        "paraValueBl": "二进制类型的属性值",
+        "imageBlob": "图片附件",
+        "imageBlobName": "图片附件名称",
+        "usingFlag": "是否使用",
+        "remarks": "备注",
+        "validType": "有效类型",
+        "validBegin": "生效开始时间",
+        "validEnd": "有效截止时间",
+        "createTime": "创建时间",
+        "modifyTime": "最后修改时间",
+        "verifyTime": "审核时间"
+      }
+    }
+  }
+}
