@@ -22,9 +22,12 @@ export class Home extends React.Component<IHomeProp> {
       <Row>
         <Col md="9">
           <h2>
+            <div>KMS2.0</div>
+            {/*
             <Translate contentKey="home.title">Welcome, Java Hipster!</Translate>
+*/}
           </h2>
-          <p className="lead">
+          {/*<p className="lead">
             <Translate contentKey="home.subtitle">This is your homepage</Translate>
           </p>
           {account && account.login ? (
@@ -57,12 +60,12 @@ export class Home extends React.Component<IHomeProp> {
                 </Link>
               </Alert>
             </div>
-          )}
-          <p>
+          )}*/}
+          {/*         <p>
             <Translate contentKey="home.question">If you have any question on JHipster:</Translate>
-          </p>
+          </p>*/}
 
-          <ul>
+          {/*   <ul>
             <li>
               <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
                 <Translate contentKey="home.link.homepage">JHipster homepage</Translate>
@@ -96,7 +99,7 @@ export class Home extends React.Component<IHomeProp> {
               Github
             </a>
             !
-          </p>
+          </p>*/}
         </Col>
         <Col md="3" className="pad">
           <span className="hipster rounded" />
